@@ -35,13 +35,12 @@ import (
 )
 
 func handler(w http.ResponseWriter, r *http.Request) {  
-    fmt.Fprintf(w, "Hi there - this page was served using Go!!!! \\o/")
-    fmt.Fprintf(w, "Node:"+os.Getenv("WEBSITE_NODE_DEFAULT_VERSION"))
+    fmt.Fprintf(w, "Hi there - this page was served using Go \\o/")
 }
 func main() {
     bot, err := linebot.New(
-		"b81bfdb52cc7c587f9865f2a1c9b7939",
-		"YKwBLutO/SIk5zq88hi/+C/fWMmRxBBQ2jUhDa789Rrjaiotb/Bc7fjeicFpLrWrulVDve4pQNSl0x6K/Nbite0B46fC/P8lQfCm3ub6NLFsJG9cUbp39RzVJ/3kQbaiCzcYYUEChWatthPq8G0QXwdB04t89/1O/w1cDnyilFU=",
+		os.Getenv("LINE_CHANNEL_SECRET"),
+		os.Getenv("LINE_CHANNEL_ACCESS_TOKEN"),
 	)
 	if err != nil {
 		log.Fatal(err)
