@@ -35,7 +35,7 @@ import (
 )
 
 func handler(w http.ResponseWriter, r *http.Request) {  
-    fmt.Fprintf(w, "Hi there - this page was served using Go \\o/")
+    fmt.Fprintf(w, "Hi there - this page was served using Go!!!! \\o/")
 }
 func main() {
     bot, err := linebot.New(
