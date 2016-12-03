@@ -36,6 +36,7 @@ import (
 
 func handler(w http.ResponseWriter, r *http.Request) {  
     fmt.Fprintf(w, "Hi there - this page was served using Go!!!! \\o/")
+    fmt.Fprintf(w, "Node:"+os.Getenv("WEBSITE_NODE_DEFAULT_VERSION"))
 }
 func main() {
     bot, err := linebot.New(
